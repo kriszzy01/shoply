@@ -1,0 +1,21 @@
+@import "@/styles/abstracts/variables";
+@import "@/styles/abstracts/mixins";
+@import "@/styles/abstracts/functions";
+
+.tag {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin-top: 0.5rem;
+  margin-right: 0.5rem;
+  background-color: rgba($color: $col-secondary, $alpha: 0.5);
+  color: $col-secondary-tint;
+  font-weight: bold;
+  padding: 0.25rem 1rem;
+  font-size: 0.8rem;
+
+  &[data-craftable="true"] {
+    background-color: rgba($color: $col-primary, $alpha: 0.5);
+    color: $col-primary-tint;
+  }
+}

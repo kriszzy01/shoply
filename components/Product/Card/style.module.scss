@@ -1,0 +1,34 @@
+@import "@/styles/abstracts/variables";
+@import "@/styles/abstracts/mixins";
+@import "@/styles/abstracts/functions";
+
+.card {
+  position: relative;
+  @include border-radius(6px);
+  width: 100%;
+  max-width: toRem(400px);
+  overflow: hidden;
+  transition: transform 0.1s ease-in-out;
+  color: $col-primary-tint;
+
+  &:hover,
+  &:focus {
+    outline: 1px solid;
+    transform: scale(1.05);
+  }
+
+  &__image {
+    position: relative;
+    height: toRem(260px);
+    width: 100%;
+    background-color: $col-grey;
+  }
+
+  &__details {
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: $col-light;
+  }
+}

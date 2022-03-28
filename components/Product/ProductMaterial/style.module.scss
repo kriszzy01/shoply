@@ -1,0 +1,28 @@
+@import "@/styles/abstracts/variables";
+@import "@/styles/abstracts/mixins";
+@import "@/styles/abstracts/functions";
+
+.material {
+  display: flex;
+  align-items: center;
+  border: 1px solid $col-grey;
+
+  &__variant {
+    &-secondary {
+      padding: 0.5rem;
+      @include border-radius(6px);
+    }
+  }
+
+  &__image {
+    position: relative;
+    width: toRem(60px);
+    height: toRem(50px);
+    margin-right: 0.5rem;
+    background-color: $col-grey;
+  }
+
+  &__content-count {
+    color: $col-primary;
+  }
+}
