@@ -1,0 +1,31 @@
+// OUR Z-INDEX SHOULD BE USED THIS WAY. SO WE DON'T HAVE DIFFERENT Z-INDEX FLYING AROUND
+// use @include z-index(fill-page); for example
+@use "sass:math";
+
+$z-index: (
+  max-index: 9999999999,
+  fill-page: 60,
+  modal: 50,
+  dropdown-menu: 40,
+  navigation: 30,
+  underlay: 20,
+  overlay: 10,
+  normal: 5,
+  behind: -1,
+);
+
+@function z-index($key) {
+  @return map-get($z-index, $key);
+}
+
+@mixin z-index($key) {
+  z-index: z-index($key);
+}
+
+@mixin border-radius($pixel...) {
+  border-radius: $pixel;
+  -webkit-border-radius: $pixel;
+  -moz-border-radius: $pixel;
+  -ms-border-radius: $pixel;
+  -o-border-radius: $pixel;
+}
