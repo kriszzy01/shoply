@@ -1,20 +1,10 @@
-import type { NextApiRequest, NextApiResponse } from 'next'
+import type { NextApiRequest, NextApiResponse } from "next";
 
-interface Material {
-  productID: number
-  count: number
-}
-
-interface Product {
-  name: string
-  id: number
-  imageURL: string
-  materials: Material[]
-}
+import { ProductResponse } from "@/types";
 
 export default function handler(
   req: NextApiRequest,
-  res: NextApiResponse<Product[]>
+  res: NextApiResponse<ProductResponse[]>
 ) {
   res.status(200).json([
     {
