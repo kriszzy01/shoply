@@ -1,0 +1,11 @@
+@import "@/styles/abstracts/variables";
+@import "@/styles/abstracts/mixins";
+@import "@/styles/abstracts/functions";
+
+.input {
+  border: 1px groove $col-dark;
+  @include border-radius(6px);
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: $col-dark;
+}
