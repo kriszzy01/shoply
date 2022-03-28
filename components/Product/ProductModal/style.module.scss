@@ -1,0 +1,113 @@
+@import "@/styles/abstracts/variables";
+@import "@/styles/abstracts/mixins";
+@import "@/styles/abstracts/functions";
+
+.dialog {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  color: $col-primary-tint;
+  font-weight: 500;
+
+  @media screen and (min-width: 62em) {
+    height: 80vh;
+  }
+
+  &__trigger {
+    width: 100%;
+  }
+
+  &__header {
+    display: flex;
+    align-items: flex-start;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+
+    &-content {
+      flex-grow: 1;
+      text-align: left;
+    }
+  }
+
+  h2,
+  h3 {
+    color: $col-dark;
+  }
+
+  &__content {
+    flex-grow: 1;
+    display: flex;
+    width: 100%;
+
+    &-image {
+      position: relative;
+      height: toRem(230px);
+      width: toRem(270px);
+      background-color: $col-grey;
+      @include border-radius(6px);
+    }
+
+    &-details {
+      flex-grow: 1;
+      margin-left: 2rem;
+
+      &-header {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 2rem;
+      }
+
+      &-header-controls {
+        display: flex;
+        margin-top: 0.8rem;
+
+        &-quantity {
+          display: flex;
+          align-items: center;
+
+          button {
+            height: toRem(24px);
+            width: toRem(24px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            @include border-radius(50%);
+            border: 1px solid $col-primary-tint;
+          }
+
+          span {
+            margin-left: 0.8rem;
+            margin-right: 0.8rem;
+            padding: 1px 0.5rem;
+            border: 1px solid $col-grey;
+            @include border-radius(3px);
+            color: $col-primary;
+          }
+        }
+
+        &-update {
+          margin-left: 1rem;
+        }
+      }
+
+      &-materials-list {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
+        margin-top: 1rem;
+      }
+
+      &-materials-controls {
+        margin-top: 2.5rem;
+        width: 60%;
+        margin-left: auto;
+        display: grid;
+        justify-content: flex-end;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+      }
+    }
+  }
+}
